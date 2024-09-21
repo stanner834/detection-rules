@@ -1,0 +1,19 @@
+[metadata]
+creation_date = "2024/09/21"
+maturity = "development"
+updated_date = "2024/09/21"
+
+[rule]
+author = ["Samuel"]
+description = "Launch whoami.exe"
+language = "eql"
+name = "whoami"
+risk_score = 1
+rule_id = "4b71a3c9-fb02-44e4-8c02-e7054777a2f1"
+severity = "low"
+type = "eql"
+
+query = '''
+process where process.name == "whoami.exe"
+'''
+
