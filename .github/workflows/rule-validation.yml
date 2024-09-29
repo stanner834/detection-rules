@@ -1,4 +1,4 @@
-name: Rule Validation and BAS Test
+name: Rule Validation
 
 # Trigger the workflow on push or pull request events
 on:
@@ -39,8 +39,3 @@ jobs:
       - name: Import Rules into Kibana
         run: |
           python -m detection_rules kibana import-rules --overwrite -e -ac
-
-      # Step 6: Run the custom BAS Test Script
-      - name: Run BAS Test Script
-        run: |
-          c:/Users/stann/Coding_Projects/detection-rules/env/Scripts/python.exe c:/Users/stann/Coding_Projects/Scripts/detection-rules/Create_BAS_Test.py
