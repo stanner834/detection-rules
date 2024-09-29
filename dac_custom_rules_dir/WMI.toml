@@ -1,0 +1,22 @@
+[metadata]
+creation_date = "2024/09/27"
+maturity = "development"
+updated_date = "2024/09/27"
+
+[rule]
+author = ["sam"]
+description = "Detect WIM Port Usage via svchost.exe or netsh.exe"
+language = "eql"
+name = "Detect WIM Port Usage"
+risk_score = 50
+rule_id = "d3bfa7e7-5a7c-4f28-a0c9-3bf6e074b432"
+severity = "medium"
+type = "eql"
+
+query = '''
+process where 
+  process.name == "svchost.exe" and 
+  process.args : ("5985", "5986") or
+  process.name == "netsh.exe" and 
+  process.command_line like~ "*wim*"
+'''

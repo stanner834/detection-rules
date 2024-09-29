@@ -27,7 +27,7 @@ jobs:
       # Step 4: Validate detection rule in custom directory
       - name: Validate Detection Rules
         run: |
-          python -m detection_rules validate-rule dac_custom_rules_dir
+          python -m detection_rules validate-rule dac_custom_rules_dir/newrule.toml
 
       # Step 5: Import rules into Kibana with overwrite
       - name: Import Rules into Kibana
